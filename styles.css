@@ -1,0 +1,128 @@
+/* Global layout and app container - Dark / Futuristic Theme */
+:root{
+  --bg-900:#06070a; /* deepest */
+  --bg-800:#0c0f14;
+  --glass:rgba(255,255,255,0.04);
+  --card:rgba(20,24,30,0.6);
+  --muted:#9aa4b2;
+  --accent:#7cf2ff; /* cyan neon */
+  --accent-2:#8a6bff; /* purple neon */
+  --danger:#ff6b6b;
+  --radius:12px;
+  --glass-border:linear-gradient(135deg, rgba(124,242,255,0.12), rgba(138,107,255,0.08));
+  --glow:0 8px 40px rgba(124,242,255,0.06);
+}
+.page{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:48px 20px;box-sizing:border-box}
+.page{background:transparent}
+html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:
+  radial-gradient(1200px 600px at 10% 10%, rgba(138,107,255,0.06), transparent),
+  radial-gradient(1000px 500px at 90% 90%, rgba(124,242,255,0.04), transparent),
+  var(--bg-900);color:#e6eef6;min-height:100vh;background-attachment:fixed;background-repeat:no-repeat;background-size:cover}
+/* ensure the page container is transparent so the body background shows through */
+h1{margin:0 0 24px 0;text-align:center;font-size:clamp(1.5rem,3vw,2.25rem);color:var(--accent)}
+#app{width:100%;max-width:1000px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:var(--radius);box-shadow:var(--glow);padding:24px;min-height:360px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.03)}
+#app.center{align-items:center;justify-content:center}
+
+/* Utility cards and spacing */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);box-shadow:var(--glow);padding:38px;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.muted{color:var(--muted)}
+
+/* Tic-Tac-Toe: 3x3 grid */
+.tic-tac-toe .board{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;--board-size:min(540px,90vw);width:var(--board-size);height:var(--board-size);background:transparent;margin:0 auto;padding:12px;box-sizing:border-box}
+.tic-tac-toe .cell{display:flex;align-items:center;justify-content:center;font-size:3.4rem;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;cursor:pointer;user-select:none;border:1px solid rgba(255,255,255,0.03);transition:transform 140ms ease, box-shadow 140ms ease;color:var(--muted);padding:6px}
+/* ensure each grid cell is square by making rows equal to columns */
+.tic-tac-toe .board{grid-auto-rows:1fr}
+.tic-tac-toe .cell:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(124,242,255,0.06)}
+
+/* Gallery: responsive image grid */
+.gallery .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px;display:block;filter:grayscale(6%) saturate(120%)}
+
+/* Form layout: labels, spacing, aligned inputs */
+.form{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.form .row{display:flex;flex-direction:column;gap:6px}
+.form label{font-weight:600;font-size:0.95rem;color:var(--muted)}
+.form input[type="text"],.form input[type="email"],.form textarea,.form select{padding:10px 12px;border:1px solid rgba(255,255,255,0.04);border-radius:8px;background:transparent;color:inherit;font-size:1rem}
+.form textarea{min-height:120px;resize:vertical}
+.form .actions{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
+.btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#001020;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(124,242,255,0.06)}
+.btn.secondary{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04);padding:8px 12px}
+
+/* Snake: centered canvas */
+.snake{display:flex;align-items:center;justify-content:center}
+.snake canvas{background:#06070a;border-radius:8px;width:min(480px,90vw);height:auto;display:block;box-shadow:0 12px 40px rgba(138,107,255,0.06);border:1px solid rgba(255,255,255,0.03)}
+
+/* Snake controls and score */
+.snake .snake-controls{display:flex;align-items:center;gap:12px}
+.snake #snakeScore{font-weight:700;color:var(--accent)}
+
+/* New two-column layout for snake: left controls column and right game column */
+.snake .snake-grid{display:grid;grid-template-columns:30% 1fr;gap:16px;align-items:start}
+.snake .snake-side{display:flex;flex-direction:column;gap:12px}
+.snake .snake-side .btn{width:100%;display:block}
+
+@media (max-width:720px){
+  .snake .snake-grid{grid-template-columns:1fr;}
+  .snake .snake-side{flex-direction:row;gap:8px;justify-content:center}
+  .snake .snake-side .btn{width:auto;}
+}
+
+
+/* Responsive tweaks */
+@media (max-width:520px){
+  .page{padding:28px 16px}
+  #app{padding:16px}
+}
+
+/* Small helpers */
+.center-flex{display:flex;align-items:center;justify-content:center}
+
+/* Example placeholder styles for empty state inside #app */
+.empty{color:var(--muted);text-align:center;padding:28px}
+
+/* Tic-Tac-Toe mark styles (neon) */
+.tic-tac-toe .cell.x{color:var(--accent);font-weight:800;text-shadow:0 4px 18px rgba(124,242,255,0.16)}
+.tic-tac-toe .cell.o{color:var(--accent-2);font-weight:800;text-shadow:0 4px 18px rgba(138,107,255,0.12)}
+.tic-tac-toe .cell.win{box-shadow:0 18px 50px rgba(124,242,255,0.12);transform:translateY(-6px);border:1px solid rgba(124,242,255,0.12)}
+.tic-tac-toe .status{margin:8px 0 16px;color:var(--muted)}
+
+/* buttons / small UI */
+.btn{font-weight:700;letter-spacing:0.6px}
+.muted small{color:var(--muted)}
+
+/* subtle animated background lines for game card */
+.tic-tac-toe.card{position:relative;overflow:hidden}
+.tic-tac-toe.card::before{content:"";position:absolute;inset:-40%;background:linear-gradient(90deg, rgba(124,242,255,0.02), rgba(138,107,255,0.02));transform:rotate(12deg);opacity:0.5;pointer-events:none}
+
+/* ensure cells are above the decorative background so they remain interactive */
+.tic-tac-toe .cell{position:relative;z-index:2}
+
+/* Positioning for game actions (restart, etc.) */
+.tic-tac-toe .game-actions{margin-top:12px;width:var(--board-size);margin-left:auto;margin-right:auto;display:flex;justify-content:flex-end}
+.tic-tac-toe .game-actions .btn{min-width:88px}
+
+/* Confetti animation (temporary elements inserted by JS) */
+.confetti-container{position:fixed;inset:0;pointer-events:none;overflow:visible;z-index:9999}
+.confetti{position:absolute;top:-10vh;border-radius:3px;will-change:transform,opacity;box-shadow:0 6px 18px rgba(0,0,0,0.35);animation:confetti-fall var(--dur,1.6s) cubic-bezier(.2,.9,.2,1) forwards;opacity:0.95}
+@keyframes confetti-fall{
+  0%{transform:translateX(0) translateY(-10vh) rotate(0);opacity:1}
+  100%{transform:translateX(var(--tx,0px)) translateY(110vh) rotate(720deg);opacity:0}
+}
+
+/* Gallery styles */
+.gallery .gallery-preview{display:flex;align-items:center;justify-content:center}
+.gallery .gallery-preview img{max-width:100%;height:auto;border-radius:8px;display:block}
+.gallery .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.gallery .thumb{border:0;padding:0;background:transparent;border-radius:8px;overflow:hidden;cursor:pointer;display:block}
+.gallery .thumb img{width:100%;height:80px;object-fit:cover;display:block;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+.gallery .thumb.selected img{outline:3px solid rgba(124,242,255,0.12);box-shadow:0 8px 30px rgba(124,242,255,0.06);transform:scale(1.02)}
+.gallery .thumb:focus{outline:2px solid rgba(124,242,255,0.14)}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:linear-gradient(rgba(2,6,23,0.7), rgba(2,6,23,0.9));display:flex;align-items:center;justify-content:center;z-index:12000;cursor:zoom-out}
+.lightbox-inner{max-width:95vw;max-height:95vh;padding:20px}
+.lightbox-inner img{display:block;max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+
+
+
+

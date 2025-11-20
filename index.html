@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <h1>Centered Title</h1>
+    <div id="app" aria-label="App container">
+      <div class="tic-tac-toe card">
+        <div class="game-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <div class="muted">Tic‑Tac‑Toe</div>
+        </div>
+
+        <div class="status muted" id="status">Player X's turn</div>
+
+        <div class="board" role="grid" aria-label="Tic Tac Toe board">
+          <div class="cell" data-index="0" role="button" tabindex="0"></div>
+          <div class="cell" data-index="1" role="button" tabindex="0"></div>
+          <div class="cell" data-index="2" role="button" tabindex="0"></div>
+          <div class="cell" data-index="3" role="button" tabindex="0"></div>
+          <div class="cell" data-index="4" role="button" tabindex="0"></div>
+          <div class="cell" data-index="5" role="button" tabindex="0"></div>
+          <div class="cell" data-index="6" role="button" tabindex="0"></div>
+          <div class="cell" data-index="7" role="button" tabindex="0"></div>
+          <div class="cell" data-index="8" role="button" tabindex="0"></div>
+        </div>
+        <div class="game-actions" style="display:flex;justify-content:flex-end;margin-top:14px">
+          <button id="restartBtn" class="btn secondary">Restart</button>
+        </div>
+      </div>
+ </div>
+<div class="page">
+      <!-- Gallery placed under the Tic-Tac-Toe game -->
+      <div class="gallery card" aria-label="Image gallery" id="gallery">
+        <div class="gallery-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <div class="muted">Gallery</div>
+          <div class="muted small">Click a thumbnail to preview,<br> click preview to open</div>
+        </div>
+
+        <div class="gallery-preview" id="galleryPreviewWrap" style="margin-bottom:12px;display:flex;align-items:center;justify-content:center">
+          <img id="galleryPreview" src="https://picsum.photos/id/1015/800/480" alt="Preview image" style="max-width:100%;border-radius:8px;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.4);"/>
+        </div>
+
+        <div class="grid" id="galleryGrid">
+          <button class="thumb" data-full="https://picsum.photos/id/1015/800/480" aria-label="Image 1"><img src="https://picsum.photos/id/1015/300/180" alt="Image 1"></button>
+          <button class="thumb" data-full="https://picsum.photos/id/1016/800/480" aria-label="Image 2"><img src="https://picsum.photos/id/1016/300/180" alt="Image 2"></button>
+          <button class="thumb" data-full="https://picsum.photos/id/1025/800/480" aria-label="Image 3"><img src="https://picsum.photos/id/1025/300/180" alt="Image 3"></button>
+          <button class="thumb" data-full="https://picsum.photos/id/1035/800/480" aria-label="Image 4"><img src="https://picsum.photos/id/1035/300/180" alt="Image 4"></button>
+          <button class="thumb" data-full="https://picsum.photos/id/1043/800/480" aria-label="Image 5"><img src="https://picsum.photos/id/1043/300/180" alt="Image 5"></button>
+          <button class="thumb" data-full="https://picsum.photos/id/1050/800/480" aria-label="Image 6"><img src="https://picsum.photos/id/1050/300/180" alt="Image 6"></button>
+        </div>
+      </div>
+      </div>
+      <div>
+      <!-- Snake game placed under the Gallery -->
+      <div class="snake card" id="snakeCard" style="margin-top:18px">
+        <div class="snake-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          
+        </div>
+
+        <!-- two-column layout: left column 30% for controls, right column for game -->
+        <div class="snake-grid" style="display:grid;grid-template-columns:30% 1fr;gap:16px;align-items:start">
+          <div class="snake-side" style="display:flex;flex-direction:column;gap:12px;">
+            <div class="muted">Snake</div>
+            <div id="snakeScore" class="muted">Score: 0</div>
+            <div class="muted small">Controls</div>
+            <div class="muted small">Use arrow keys to move</div>
+            <button id="snakeStart" class="btn" style="width:100%" aria-label="Start game">Start</button>
+            <button id="snakePause" class="btn secondary" style="width:100%" aria-label="Pause game">Pause</button>
+            <button id="snakeReset" class="btn secondary" style="width:100%" aria-label="Reset game">Reset</button>
+          </div>
+
+          <div class="snake-play" style="display:flex;justify-content:center;align-items:center">
+            <canvas id="snakeCanvas" width="420" height="420" style="width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 12px 40px rgba(0,0,0,0.45);"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact form placed under the Gallery -->
+      <div class="card form" id="contactCard" style="margin-top:18px">
+        <div class="form-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <div class="muted">Contact Us</div>
+          <div class="muted small">We will respond as soon as possible</div>
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div class="row">
+            <label for="contactName">Name</label>
+            <input id="contactName" name="name" type="text" placeholder="Your name" required />
+          </div>
+
+          <div class="row">
+            <label for="contactEmail">Email</label>
+            <input id="contactEmail" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="row">
+            <label for="contactPhone">Phone</label>
+            <input id="contactPhone" name="phone" type="tel" placeholder="(optional)" />
+          </div>
+
+          <div class="row">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" placeholder="Write your message..." required></textarea>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn">Send Message</button>
+            <button type="reset" class="btn secondary">Reset</button>
+          </div>
+
+          <div id="formResult" class="muted" aria-live="polite" style="margin-top:12px"></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Optional: small script showing where to mount a JS app -->
+  <script src="tic-tac-toe.js" type="module"></script>
+  <script src="gallery.js" type="module"></script>
+  <script src="contact.js" type="module"></script>
+  <script src="snake.js" type="module"></script>
+</body>
+</html>
