@@ -1,14 +1,12 @@
-# Lab: Build a Small JavaScript Application
+# Build a Small JavaScript Application
 
 ## 🎯 Goal
 
-Build a small interactive JavaScript application. Practice breaking down a large problem into smaller parts, prompting Copilot effectively, reviewing its suggestions, and ensuring you understand the code before using it.
+Build a small interactive JavaScript application. Practice breaking down a large problem into smaller parts, prompting Copilot effectively.
 
 ---
 
 ## 🕹️ Projects ...
-
-You may build **any one** of the following applications:
 
 ### **1. Tic-Tac-Toe Game**
 
