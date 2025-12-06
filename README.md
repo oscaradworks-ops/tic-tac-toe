@@ -1,6 +1,6 @@
 # Build a Small JavaScript Application
 
-## 🎯 Goal
+
 
 Build a small interactive JavaScript application. Practice breaking down a large problem into smaller parts, prompting Copilot effectively.
 
@@ -27,7 +27,7 @@ A simple version of Snake played inside a canvas, where the snake grows as it ea
 You will follow the **same step-by-step process** regardless of the project you choose.
 ---
 
-## ✅ STEP 1 — Create a Basic HTML Page
+Create a Basic HTML Page
 
 
 "Create a simple HTML page with a centered title and an empty container where my application will be displayed."
@@ -35,7 +35,7 @@ You will follow the **same step-by-step process** regardless of the project you 
 
 ---
 
-## ✅ STEP 2 — Add Basic Layout/CSS
+— Add Basic Layout/CSS
 
 
 "Write CSS to create the basic layout of my application. Make the container centered and clean-looking."
@@ -47,7 +47,7 @@ You will follow the **same step-by-step process** regardless of the project you 
 
 ---
 
-## ✅ STEP 3 — Add Interactive Elements
+— Add Interactive Elements
 
 "Write JavaScript that makes the main elements of my app interactive, and log interactions to the console."
 
@@ -58,7 +58,7 @@ You will follow the **same step-by-step process** regardless of the project you 
 
 ---
 
-## ✅ STEP 4 — Add Core Functionality
+Add Core Functionality
 
 "Add the main behavior of the application based on user interactions."
 
@@ -72,7 +72,7 @@ You will follow the **same step-by-step process** regardless of the project you 
 
 ---
 
-## ✅ STEP 5 — Prevent Invalid Actions
+Prevent Invalid Actions
 
 
 "Improve the logic to prevent invalid or repeated actions."
@@ -86,7 +86,7 @@ Examples:
 
 ---
 
-## ✅ STEP 6 — Add Completion Logic or Feedback
+Add Completion Logic or Feedback
 
 
 Examples:
@@ -98,7 +98,7 @@ Examples:
 
 ---
 
-## ✅ STEP 7 — Add Reset/Restart Button
+Add Reset/Restart Button
 
 "Add a Reset button and write JavaScript to restart the application state."
 
@@ -106,7 +106,7 @@ Examples:
 
 ---
 
-## ✅ STEP 8 — Add Polished Styling
+Add Polished Styling
 
 **Prompt Copilot:**
 
@@ -116,7 +116,7 @@ Examples:
 
 ---
 
-# 🎉 Final Project Deliverable
+#  Final Project Deliverable🎉
 
 By completing these steps, you will have:
 
